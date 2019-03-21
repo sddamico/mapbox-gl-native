@@ -211,6 +211,7 @@ public:
 @property (nonatomic) NSMutableArray<NSLayoutConstraint *> *logoViewConstraints;
 @property (nonatomic, readwrite) UIButton *attributionButton;
 @property (nonatomic) NSMutableArray<NSLayoutConstraint *> *attributionButtonConstraints;
+@property (nonatomic, weak) UIAlertController *attributionController;
 
 @property (nonatomic, readwrite) MGLStyle *style;
 
@@ -1004,6 +1005,8 @@ public:
     }
 
     [self updateUserLocationAnnotationView];
+
+    [self updateAttributionAlertView];
 }
 
 /// Updates `contentInset` to reflect the current window geometry.
@@ -2299,6 +2302,7 @@ public:
     
     UIViewController *viewController = [self.window.rootViewController mgl_topMostViewController];
     [viewController presentViewController:attributionController animated:YES completion:NULL];
+    self.attributionController = attributionController;
 }
 
 - (void)presentTelemetryAlertController
@@ -6273,6 +6277,12 @@ public:
         if ( ! CGPointEqualToPoint(calloutView.center, centerPoint)) {
             calloutView.center = centerPoint;
         }
+    }
+}
+
+- (void)updateAttributionAlertView {
+    if (self.attributionController && self.attributionController.presentingViewController) {
+        self.attributionController.popoverPresentationController.sourceRect = self.attributionButton.frame;
     }
 }
 
