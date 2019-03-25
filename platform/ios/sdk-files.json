@@ -287,6 +287,7 @@
         "configuration_utils.h": "platform/ios/vendor/mapbox-events-ios/vendor/TrustKit/configuration_utils.h",
         "parse_configuration.h": "platform/ios/vendor/mapbox-events-ios/vendor/TrustKit/parse_configuration.h",
         "ssl_pin_verifier.h": "platform/ios/vendor/mapbox-events-ios/vendor/TrustKit/Pinning/ssl_pin_verifier.h",
+        "MGLApplication_Private.h": "platform/ios/src/MGLApplication_Private.h",
         "TSKPublicKeyAlgorithm.h": "platform/ios/vendor/mapbox-events-ios/vendor/TrustKit/Pinning/TSKPublicKeyAlgorithm.h",
         "TSKSPKIHashCache.h": "platform/ios/vendor/mapbox-events-ios/vendor/TrustKit/Pinning/TSKSPKIHashCache.h",
         "reporting_utils.h": "platform/ios/vendor/mapbox-events-ios/vendor/TrustKit/Reporting/reporting_utils.h",
