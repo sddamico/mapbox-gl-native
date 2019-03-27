@@ -125,6 +125,7 @@ public class AttributionTest extends EspressoTest {
   }
 
   @Test
+  @Ignore
   public void testTelemetryDialog() {
     validateTestSetup();
 
