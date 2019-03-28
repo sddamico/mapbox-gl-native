@@ -878,9 +878,7 @@ jobs:
       - run:
           name: Upload coverage metrics to s3
           command: |
-            if [[ $CIRCLE_BRANCH == master ]]; then
-                scripts/publish_core_codecoverage.js -p Linux -s Core
-            fi
+            scripts/publish_core_codecoverage.js -p Linux -s Core
 
 # ------------------------------------------------------------------------------
   linux-doxygen:

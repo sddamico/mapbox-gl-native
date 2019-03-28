@@ -139,14 +139,15 @@ function httpRequest() {
             });
 
             req.end();
-        }, 30000);
+        }, 60000);
     });
 }
 
 httpRequest().then((body) => {
     const dataSource = parseResponse(body);
+    console.log("Response:", dataSource);
     if (dataSource) {
-        return uploadData(dataSource);
+       // return uploadData(dataSource);
     } else {
         throw new Error('Failed to parse the results received from codecov.io.');
     }
